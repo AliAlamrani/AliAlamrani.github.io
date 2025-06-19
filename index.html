@@ -1310,32 +1310,31 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/meokzdaz" method="POST" >
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" placeholder="What is this regarding?" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="How can I help you?" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
+  <form action="https://formspree.io/f/meokzdaz" method="POST" id="contactForm">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" class="form-control" placeholder="What is this regarding?" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" class="form-control" placeholder="How can I help you?" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </form>
+</div>
             </div>
         </div>
     </section>
@@ -1432,12 +1431,7 @@
             });
         });
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
+        
 
         // Animation on scroll
         const observer = new IntersectionObserver((entries) => {
