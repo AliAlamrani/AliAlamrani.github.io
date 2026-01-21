@@ -1,374 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Ali Alamrani | Software Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ali Alamrani | Software Engineer</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --bg:#0b0b0c;
+  --card:#151518;
+  --accent:#ff2a2a;
+  --text:#f4f4f5;
+  --muted:#b3b3b3;
+  --border:#262626;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
 
-  <style>
-    :root {
-      --bg: #0b0b0b;
-      --card: #141414;
-      --border: rgba(255,255,255,0.08);
-      --text: #f5f5f5;
-      --muted: #b0b0b0;
-      --accent: #ff2a2a;
-      --radius: 14px;
-      --ease: cubic-bezier(.22,1,.36,1);
-    }
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+a{color:var(--accent);text-decoration:none}
 
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
+}
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+section{margin-bottom:100px}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 80px 20px;
-    }
+h1,h2,h3{
+  font-weight:700;
+  letter-spacing:-0.5px;
+}
 
-    /* ---------- HEADER ---------- */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(11,11,11,0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-    }
+h2{
+  font-size:2rem;
+  margin-bottom:30px;
+}
 
-    nav {
-      max-width: 1000px;
-      margin: auto;
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+p{color:var(--muted)}
 
-    nav strong {
-      font-weight: 600;
-      letter-spacing: 0.3px;
-    }
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:30px;
+  transition:.6s var(--ease);
+}
 
-    nav a {
-      margin-left: 24px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+.card:hover{
+  transform:translateY(-6px);
+  border-color:var(--accent);
+}
 
-    nav a:hover {
-      color: var(--text);
-    }
+/* HERO */
+.hero{
+  padding-top:120px;
+}
+.hero h1{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+.hero span{
+  color:var(--accent);
+}
+.hero .subtitle{
+  font-size:1.2rem;
+  margin-bottom:30px;
+}
+.hero .links a{
+  margin-right:20px;
+  font-weight:500;
+}
 
-    /* ---------- HERO ---------- */
-    .hero {
-      padding-top: 140px;
-    }
+/* GRID */
+.grid{
+  display:grid;
+  gap:30px;
+}
+.grid-2{
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
 
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 3.2rem);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+/* LISTS */
+ul{
+  padding-left:20px;
+}
+li{
+  margin-bottom:8px;
+}
 
-    .hero h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
+/* TAGS */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:15px;
+}
+.tag{
+  font-size:.8rem;
+  padding:6px 12px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  color:var(--muted);
+}
 
-    .hero p {
-      max-width: 720px;
-      font-size: 1rem;
-      color: var(--muted);
-    }
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+}
 
-    .hero-links {
-      margin-top: 30px;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 12px 22px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--card);
-      font-size: 0.9rem;
-      transition: 0.3s var(--ease);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent);
-    }
-
-    /* ---------- SECTIONS ---------- */
-    section {
-      margin-top: 100px;
-    }
-
-    section h3 {
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-    }
-
-    /* ---------- PROJECTS ---------- */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .project {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      transition: 0.4s var(--ease);
-    }
-
-    .project:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent);
-    }
-
-    .project h4 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-
-    .project p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 15px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 15px;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(255,42,42,0.1);
-      color: var(--accent);
-    }
-
-    /* ---------- EXPERIENCE ---------- */
-    .entry {
-      margin-bottom: 40px;
-    }
-
-    .entry strong {
-      font-size: 1.05rem;
-    }
-
-    .entry span {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .entry ul {
-      margin-top: 10px;
-      padding-left: 18px;
-    }
-
-    .entry li {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    /* ---------- SKILLS ---------- */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .skills span {
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      font-size: 0.85rem;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      margin-top: 120px;
-      padding: 40px 20px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    /* ---------- REVEAL ---------- */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 0.8s var(--ease);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+/* SCROLL ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s var(--ease);
+}
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <nav>
-    <strong>Ali Alamrani</strong>
-    <div>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="mailto:aalamrani09@gmail.com">Contact</a>
-    </div>
-  </nav>
-</header>
+<!-- HERO -->
+<section class="hero container reveal">
+  <h1>Ali Alamrani <span>Software Engineer</span></h1>
+  <p class="subtitle">
+    Web Developer with real-world deployment experience, Firebase-backed applications, 
+    and a strong foundation in AI, systems, and game development.
+  </p>
+  <div class="links">
+    <a href="mailto:aalamrani09@gmail.com">Email</a>
+    <a href="https://github.com/">GitHub</a>
+    <a href="https://www.linkedin.com/">LinkedIn</a>
+  </div>
+</section>
 
-<main class="container">
-
-  <!-- HERO -->
-  <section class="hero reveal">
-    <h1>Software Engineer</h1>
-    <h2>Web Development • AI • Game Systems</h2>
+<!-- ABOUT -->
+<section class="container reveal">
+  <h2>Summary</h2>
+  <div class="card">
     <p>
-      Software developer with hands-on experience building production websites using Firebase,
-      developing AI-powered systems, and creating interactive applications in Unity.
-      Combines strong technical foundations with over a decade of real-world business experience.
+      Software Engineer with hands-on experience building and deploying production websites using
+      HTML, CSS, JavaScript, and Firebase. Combines over a decade of business and sales leadership
+      with strong problem-solving and independent development skills. Experienced in AI-driven
+      systems, real-time applications, and interactive software.
     </p>
+  </div>
+</section>
 
-    <div class="hero-links">
-      <a class="btn" href="https://easternsaudipaints.com" target="_blank">Live Website</a>
-      <a class="btn" href="https://azteca-dream-store.web.app" target="_blank">Firebase Project</a>
-      <a class="btn" href="mailto:aalamrani09@gmail.com">Email Me</a>
-    </div>
-  </section>
+<!-- PROJECTS -->
+<section class="container reveal">
+  <h2>Projects</h2>
+  <div class="grid grid-2">
 
-  <!-- PROJECTS -->
-  <section id="projects" class="reveal">
-    <h3>Selected Projects</h3>
-
-    <div class="projects">
-      <div class="project">
-        <h4>Eastern Saudi Paints</h4>
-        <p>Professional business website designed, deployed, and maintained independently.</p>
-        <div class="tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">Deployment</span>
-        </div>
-        <a href="http://easternsaudipaints.com" target="_blank">View Site →</a>
-      </div>
-
-      <div class="project">
-        <h4>Azteca Dream Store</h4>
-        <p>Firebase-hosted storefront with custom UI and product presentation logic.</p>
-        <div class="tags">
-          <span class="tag">Firebase</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">UI</span>
-        </div>
-        <a href="https://azteca-dream-store.web.app" target="_blank">View Site →</a>
-      </div>
-
-      <div class="project">
-        <h4>AI Drone Tracking System</h4>
-        <p>Autonomous face tracking using computer vision and PID control.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">AI</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="reveal">
-    <h3>Experience</h3>
-
-    <div class="entry">
-      <strong>Retail Operations Manager</strong><br>
-      <span>Savory Deli & Grocery • 2010 – Present</span>
+    <div class="card">
+      <h3>Azteca Dream Store</h3>
+      <p>
+        Firebase-hosted storefront with custom UI and front-end logic.
+        Designed, built, and deployed independently.
+      </p>
       <ul>
-        <li>Managed daily operations in a high-volume retail environment</li>
-        <li>Handled inventory, cash flow, and customer relations</li>
-        <li>Developed strong leadership, accountability, and problem-solving skills</li>
+        <li>Firebase Hosting deployment</li>
+        <li>Custom HTML/CSS/JS UI</li>
+        <li>Responsive, mobile-first design</li>
       </ul>
+      <div class="tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">Firebase</span>
+        <span class="tag">HTML/CSS</span>
+      </div>
+      <a href="https://azteca-dream-store.web.app" target="_blank">Live Site →</a>
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="reveal">
-    <h3>Technical Skills</h3>
-    <div class="skills">
-      <span>JavaScript</span>
-      <span>Python</span>
-      <span>Java</span>
-      <span>C</span>
-      <span>C#</span>
-      <span>SQL</span>
-      <span>HTML & CSS</span>
-      <span>Firebase</span>
-      <span>Unity</span>
-      <span>OpenCV</span>
-      <span>Git</span>
+    <div class="card">
+      <h3>Eastern Saudi Paints</h3>
+      <p>
+        Professional business website built for a real client,
+        focused on clarity, branding, and usability.
+      </p>
+      <ul>
+        <li>Client-facing production site</li>
+        <li>SEO-friendly structure</li>
+        <li>Clean responsive layout</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Web Design</span>
+        <span class="tag">HTML/CSS</span>
+      </div>
+      <a href="http://easternsaudipaints.com" target="_blank">Live Site →</a>
     </div>
-  </section>
 
-</main>
+    <div class="card">
+      <h3>AI Drone Tracking System</h3>
+      <p>
+        Programmed a DJI Tello drone to detect and track faces in real time using OpenCV
+        and PID control.
+      </p>
+      <ul>
+        <li>Real-time computer vision</li>
+        <li>PID tuning and control logic</li>
+        <li>Hardware–software integration</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">AI</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Unity Game Projects</h3>
+      <p>
+        Developed interactive 3D environments and gameplay systems
+        using Unity and C#.
+      </p>
+      <ul>
+        <li>Player & NPC systems</li>
+        <li>UI and interaction logic</li>
+        <li>Custom gameplay mechanics</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">C#</span>
+        <span class="tag">Unity</span>
+        <span class="tag">Game Dev</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="container reveal">
+  <h2>Experience</h2>
+  <div class="card">
+    <h3>Retail Operations Manager — Savory Deli & Grocery</h3>
+    <p>2010 – Present | New York, NY</p>
+    <ul>
+      <li>Managed daily operations for a high-traffic retail business</li>
+      <li>Handled inventory, cash flow, and vendor coordination</li>
+      <li>Developed strong customer-facing communication and leadership skills</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="container reveal">
+  <h2>Technical Skills</h2>
+  <div class="card">
+    <div class="tags">
+      <span class="tag">JavaScript</span>
+      <span class="tag">Python</span>
+      <span class="tag">Java</span>
+      <span class="tag">C</span>
+      <span class="tag">C#</span>
+      <span class="tag">SQL</span>
+      <span class="tag">HTML/CSS</span>
+      <span class="tag">Firebase</span>
+      <span class="tag">Git</span>
+      <span class="tag">REST APIs</span>
+      <span class="tag">OpenCV</span>
+      <span class="tag">Unity</span>
+    </div>
+  </div>
+</section>
 
 <footer>
-  © 2026 Ali Alamrani • New York • Open to Software Engineering Roles
+  © 2026 Ali Alamrani · Software Engineer
 </footer>
 
 <script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("visible");
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:.15});
 
-  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 </script>
 
 </body>
